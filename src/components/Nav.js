@@ -5,6 +5,7 @@ class Nav extends Component {
   render() {
     return (
       <div style={{border: '5px solid #888', padding: '5px', margin: '5px'}}>
+        // rendering content
         {this.props.name}
         {Number.isInteger(this.props.json[this.props.name]) && <span> has id</span>}
         {!Number.isInteger(this.props.json[this.props.name]) && <span> has json</span>}
