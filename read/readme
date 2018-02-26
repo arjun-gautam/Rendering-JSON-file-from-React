@@ -1,0 +1,13 @@
+App.js has pageLayout
+Id.js points Id to data or layout
+DataObjectGenerator.js generates data based in 3 inputs components, data and dataType
+LoadComponent is to register component
+
+
+1. Clone new component
+2. Change css className of components
+3. Build data for component to point by ID
+4. Build DataObject from DataObjectGenerator
+5. Add the component in LoadComponent
+6. Use the component in pageLayout from App.js
+7. Modify the css

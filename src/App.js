@@ -8,15 +8,15 @@ class App extends Component {
       container: {
         nav: 1,
         article: {
-          title: 1,
-          description: 1,
+          title: 2,
+          description: 3,
         },
+        title: 2,
       },
     }
 
     return (
         <LoadComponent name='pageDefinition' json={{pageDefinition}}/>
-        // <LoadComponent name='container' json={pageDefinition}/>
     );
   }
 }
