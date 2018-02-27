@@ -4,14 +4,9 @@ import Data from '../container/Data';
 
 class ComponentName extends Component {
   render() {
-    var data = <Data context={this} />;
-    return (
-      <div>
-        <Layout context={this}>
-          {data}
-        </Layout>
-      </div>
-    );
+    var className=this.props.name;
+    var layout = <Layout context={this}><Data context={this} /></Layout>;
+    return (<div className={className}>{layout}</div>);
   }
 }
 

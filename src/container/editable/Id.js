@@ -6,12 +6,23 @@ class Id extends Component {
     super(props);
     this.state = {
       data: {
-        '1':{value: ['Home','Services']},
-        '2':{value: 'Title'},
-        '3':{value: 'Description'},
-        '4':{value: 'example string'},
-        '5':{value: {container:{nav: 1}}},
-        '6':{value: [{nav:1},{nav:1},{article:1}]},
+        '1':{value: {
+          container: {
+            nav: 2,
+            article: {
+              title: 3,
+              description: 4,
+            },
+            title: 5,
+            layout: 6,
+          },
+        }},
+        '2':{value: ['Home','Services']},
+        '3':{value: 'Title'},
+        '4':{value: 'Description'},
+        '5':{value: 'example string'},
+        '6':{value: {container:{nav: 2}}},
+        '7':{value: [{nav:1},{nav:1},{article:1}]},
       }
     };
     this.getDataType = this.getDataType.bind(this);
@@ -148,85 +159,8 @@ class Id extends Component {
   }
 
   render() {
-    // let dataType = this.getDataType(this.props.id);
-    console.log();
     return <DataObjectGenerator component={this.props.name} dataType={this.getDataType(this.props.id)} data={this.state.data[this.props.id].value}/>;
   }
-  // render() {
-  //   let dataType = this.getDataType(this.props.id);
-  //   console.log(dataType, this.state.data[this.props.id].value);
-  //   if(dataType === 'Object') {
-  //     let object = this.state.data[this.props.id].value;
-  //     object={container: object};
-  //     return (
-  //       <LoadComponent name='container' json={object}/>
-  //     );
-  //   }
-  //   else if(dataType === 'Array of Object') {
-  //     let arrayOfObject = this.state.data[this.props.id].value;
-  //     let returningObj = arrayOfObject.map((object)=>{
-  //       const obj={container: object};
-  //       return <LoadComponent key={Math.floor(Math.random() * 1000)} name='container' json={obj}/>
-  //     });
-  //     return returningObj;
-  //   }
-  //   else if(dataType === 'Array of Boolean') {
-  //     let arrayOfBoolean = this.state.data[this.props.id].value;
-  //     let returningObj = arrayOfBoolean.map((boolean)=>{
-  //       return <span key={Math.floor(Math.random() * 1000)}>{boolean}</span>
-  //     });
-  //     return returningObj;
-  //   }
-  //   else if(dataType === 'Array of Int') {
-  //     let arrayOfInt = this.state.data[this.props.id].value;
-  //     let returningObj = arrayOfInt.map((int)=>{
-  //       return <span key={Math.floor(Math.random() * 1000)}>{int}</span>
-  //     });
-  //     return returningObj;
-  //   }
-  //   else if(dataType === 'Array of Float') {
-  //     let arrayOfFloat = this.state.data[this.props.id].value;
-  //     let returningObj = arrayOfFloat.map((float)=>{
-  //       return <span key={Math.floor(Math.random() * 1000)}>{float}</span>
-  //     });
-  //     return returningObj;
-  //   }
-  //   else if(dataType === 'Array of String') {
-  //     let arrayOfString = this.state.data[this.props.id].value;
-  //     let returningObj = arrayOfString.map((string)=>{
-  //       return <span key={Math.floor(Math.random() * 1000)}>{string}</span>
-  //     });
-  //     return returningObj;
-  //   }
-  //   else if(dataType === 'Array of Array') {
-  //     let arrayOfArray = this.state.data[this.props.id].value;
-  //     let returningObj = arrayOfArray.map((array)=>{
-  //       return <span key={Math.floor(Math.random() * 1000)}>{array}</span>
-  //     });
-  //     return returningObj;
-  //   }
-  //   else if(dataType === 'Boolean') {
-  //     let boolean = this.state.data[this.props.id].value;
-  //     return <span>{boolean}</span>;
-  //   }
-  //   else if(dataType === 'Integer') {
-  //     let integer = this.state.data[this.props.id].value;
-  //     return <span>{integer}</span>;
-  //   }
-  //   else if(dataType === 'Float') {
-  //     let float = this.state.data[this.props.id].value;
-  //     return <span>{float}</span>;
-  //   }
-  //   else if(dataType === 'String') {
-  //     let string = this.state.data[this.props.id].value;
-  //     return <span>{string}</span>;
-  //   }
-  //   else {
-  //     return (
-  //       <span />
-  //     );
-  //   }
-  // }
 }
 
 export default Id;
